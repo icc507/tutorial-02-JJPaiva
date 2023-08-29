@@ -18,13 +18,13 @@ def arbolBinario(numero):
 def insertaEnArbolBinario(arbol,numero):
 	if arbol==[]:
 		arbol+=arbolBinario(numero)
-	elif numero < arbol[0]:
-		insertaEnArbolBinario(arbol[1],numero)
 	elif numero == arbol[0]:
 		insertaEnArbolBinario(arbol[2],numero)
-	else:
+	elif numero < arbol[0]:
+		insertaEnArbolBinario(arbol[1],numero)
+	elif numero > arbol[0]:
 		insertaEnArbolBinario(arbol[3],numero)
-
+	
 for i in t:
     try:
         t1.append(int(i))
@@ -32,10 +32,8 @@ for i in t:
         t1.append(i)
 	
 w = arbolBinario(t1[0])
+t1.pop(0)
 for i in t1:
-	if i == t1[0]:
-		pass
-	else:
-	    insertaEnArbolBinario(w,i)
+	insertaEnArbolBinario(w,i)
 		
 print(w)
