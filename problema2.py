@@ -7,5 +7,13 @@
 #         20 90 hola jiji 77
 #La salida debe ser
 #         (77, 'jiji', 'hola', 90, 20)
-t = input()
-print(t)
+t = input().split()
+t1 = []
+
+for i in t:
+    try:
+        t1.append(int(i))
+    except:
+        t1.append(i)
+
+print(tuple(t1[::-1]))
