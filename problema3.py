@@ -10,6 +10,7 @@
 #La salida debe ser
 #         [20, [8, [5, [], [], []], [], []], [], [30, [], [], [90, [], [90, [], [90, [], [], []], []], []]]]
 t = input().split()
+t1 = []
 
 def arbolBinario(numero):
 	return [numero, [], [], []]
@@ -23,8 +24,6 @@ def insertaEnArbolBinario(arbol,numero):
 		insertaEnArbolBinario(arbol[2],numero)
 	else:
 		insertaEnArbolBinario(arbol[3],numero)
-	
-t1 = []
 
 for i in t:
     try:
@@ -32,10 +31,10 @@ for i in t:
     except:
         t1.append(i)
 	
-
+w = arbolBinario(t1[0])
 for i in t1:
 	if i == t1[0]:
-		w = arbolBinario(i)
+		pass
 	else:
 	    insertaEnArbolBinario(w,i)
 		
